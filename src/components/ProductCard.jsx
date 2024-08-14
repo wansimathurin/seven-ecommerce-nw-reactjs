@@ -1,10 +1,11 @@
 import React from 'react'
 import './ProductCard.css'
+import { Link } from 'react-router-dom';
 
 
-const ProductCard = ({title,price,image}) => {
+const ProductCard = ({id,title,price,image}) => {
   return (
-    <div className="card">
+    <Link to={`products/${id}`} className="card">
       <div className="image-container">
         <img src={image} alt="" width="100%" />
       </div>
@@ -12,7 +13,7 @@ const ProductCard = ({title,price,image}) => {
         <h3>{title}</h3>
         <h3 className="color">{price}XAF</h3>
       </div>
-    </div>
+    </Link>
   );
 }
 

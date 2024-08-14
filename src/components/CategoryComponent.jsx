@@ -14,9 +14,18 @@ const CategoryComponent = ({title}) => {
         <Link className="color">View all</Link>
       </div>
       <div className="products">
-        {products.map((product) => product.category === title && (
-          <ProductCard title={product.title.slice(0,20)} price={product.price} image={product.image}/>
-        ))}
+        {products.map(
+          (product, index) =>
+            product.category === title && (
+              <ProductCard
+                key={index}
+                id={product.id}
+                title={product.title.slice(0, 20)}
+                price={product.price}
+                image={product.image}
+              />
+            )
+        )}
       </div>
     </div>
   );
