@@ -21,6 +21,7 @@ const ProductDetail = () => {
       <div className="row">
         <div className="productContent">
           <h1>{product.title}</h1>
+          <h2 className='color'>{product.category}</h2>
           <h2>{product.description}</h2>
           <div className="rates">
             {checkRates()} <FaStarHalfStroke color="gold" size={40} />
