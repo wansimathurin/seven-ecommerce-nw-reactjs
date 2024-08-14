@@ -1,0 +1,22 @@
+.categoryContainer{
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+}
+.category{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.category h2{
+font-weight: 500;
+}
+
+.products{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
