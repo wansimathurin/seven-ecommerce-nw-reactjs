@@ -1,39 +1,45 @@
 import React, { useId, useState } from 'react'
 import './search.css'
+import { products } from './../data/index';
 
 const Search = () => {
-  const [count, setCount] = useState(0);
   const [enteredText, setEnteredText] = useState('');
- 
-  let users = [
-    {
-      id: useId(),
-      name: "John",
-      age: 36,
-    },
-    {
-      id: useId(),
-      name: "walter Smith",
-      age: 22,
-    },
-  ];
-  console.log("users :", users);
-  
+ //search functionality
+  const filterProducts = (productsList,searchTerm) => {
+     return productsList.filter(product=>product.title.toLowerCase().includes(searchTerm.toLowerCase()))
+  }
+  const SearchedProducts = filterProducts(products, enteredText);
   return (
-    <div className="container">
-      <h1>Count : {count}</h1>
-      <div className="buttons">
-        <button onClick={() => setCount(count + 1)} className="button">
-          increment(+)
-        </button>
-        <button onClick={() => count === 0 ? null : setCount(count - 1)} className="button">
-          decrement(-)
-        </button>
-      </div>
-      <form >
-        <input  type="text" onChange={(e)=>setEnteredText(e.target.value)}  placeholder='Enter a text' className='field' />
+    <div
+      className="container"
+      style={{ height:'100%' }}
+    >
+      <form>
+        <input
+          type="text"
+          onChange={(e) => setEnteredText(e.target.value)}
+          placeholder="Enter a text"
+          className="field"
+        />
       </form>
-      <h1>Enter : {enteredText} </h1>
+      {SearchedProducts.map((product) => (
+        <div className="searchCard" key={product.id}>
+          <div className="imageBox">
+            <img
+              src={product.image}
+              alt=""
+              width={250}
+            />
+          </div>
+          <div className="searchContent">
+            <h1>{product.title.slice(0, 5)}</h1>
+            <p>{product.description.slice(0, 7)}</p>
+            <p>
+              Price: <strong>{product.price}FCFA</strong>
+            </p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

@@ -32,3 +32,30 @@ h1{
     margin-top: 20px;
     font-size: 20px;
 }
+.searchCard{
+    height: 200px;
+    width: 33%;
+    background-color: #7835CD;
+    margin-top: 20px;
+    display: flex;
+        align-items: center;
+    /* justify-content: center; */
+    padding: 20px;
+    border-radius: 9px;
+}
+.imageBox{
+    height: 180px;
+    width: 180px;
+   background-color: #fff;
+       border-radius: 9px;
+    margin-right: 10px;
+    overflow: hidden;
+     display: flex;
+        align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+.searchContent{
+        width: 50%;
+         /* background-color: black; */
+}

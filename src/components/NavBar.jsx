@@ -1,7 +1,8 @@
 import React from "react";
 import "./NavBar.css"
 import { Link } from "react-router-dom";
-export default function NavBar() {
+import DarkModeToggle from "./DarkModeToggle/DarkModeToggle";
+export default function NavBar({ themeToggle, themeMode }) {
   return (
     <div className="navbar">
       <Link to={"/"} className="brand">
@@ -18,6 +19,7 @@ export default function NavBar() {
           <Link to={"/cart"}>Cart</Link>
         </li>
       </ul>
+      <DarkModeToggle themeToggle={themeToggle} themeMode={themeMode} />
     </div>
   );
 }
